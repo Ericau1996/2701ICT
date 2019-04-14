@@ -1,9 +1,25 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+      <ion-item>
+          <ion-label type="text" position="Enter Your Firstname">Firstname:</ion-label>
+          <ion-input [(ngModel)]="firstname"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label type="text" position="Enter Your Lastname">Lastname:</ion-label>
+          <ion-input [(ngModel)]="lastname"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label type="text" position="Enter Your Email">Email:</ion-label>
+          <ion-input [(ngModel)]="email"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label type="text" position="Enter Your DOB">DOB:</ion-label>
+          <ion-datetime [(ngModel)]="dob" display-format="DD/MM/YYYY"></ion-datetime>
+      </ion-item>
+      <ion-button (click)="login()">Login</ion-button>
 </ion-content>

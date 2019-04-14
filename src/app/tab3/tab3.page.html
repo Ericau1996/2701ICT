@@ -8,7 +8,7 @@
 
 <ion-content>
   <ion-item>
-    <ion-label type="text" position="Enter Your Name">Name:</ion-label>
+    <ion-label type="text" position="Enter Your Nickname">Nickname:</ion-label>
     <ion-input [(ngModel)]="username"></ion-input>
   </ion-item>
   <ion-item>
@@ -16,7 +16,7 @@
     <ion-toggle [(ngModel)]="notications" [checked]="toggleStatus"></ion-toggle>
   </ion-item>
   <ion-item>
-    <ion-label>Date</ion-label>
+    <ion-label>Date:</ion-label>
     <ion-datetime [(ngModel)]="dateTime" display-format="MM/YYYY" picker-format="MMMM YYYY"></ion-datetime>
   </ion-item>
   <ion-button (click)="save()">Save</ion-button>
