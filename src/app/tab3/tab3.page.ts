@@ -9,8 +9,8 @@ import { Storage } from '@ionic/storage';
 })
 export class Tab3Page {
   username="";
-  notications:any;
-  toggleStatus:any;
+  update:any;
+  notifications:any;
   dateTime:any;
   constructor(private router: Router, private storage: Storage){
     this.storage.get("username").then(val => {
@@ -20,8 +20,11 @@ export class Tab3Page {
         this.username = val;
       }
     });
-    this.storage.get("notications").then(valTog => {
-        this.notications = valTog;
+    this.storage.get("update").then(valTog => {
+        this.update = valTog;
+    });
+    this.storage.get("notifications").then(valPush => {
+      this.notifications = valPush;
     });
     this.storage.get("dateTime").then(valTime => {
       this.dateTime = valTime;
@@ -32,11 +35,14 @@ export class Tab3Page {
     this.storage.set("username", this.username);
     console.log('save username', this.username);
     
-    this.storage.set("notications", this.notications);
-    console.log('Status:', this.notications)
+    this.storage.set("update", this.update);
+    console.log('Update status:', this.update);
+
+    this.storage.set("notifications", this.notifications);
+    console.log('Push status:', this.notifications);
 
     this.storage.set("dateTime", this.dateTime);
-    console.log('Date:', this.dateTime)
+    console.log('Date:', this.dateTime);
   }
   async ngOnInit(){
     this.username = await this .storage.get("username");

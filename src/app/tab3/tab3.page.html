@@ -7,18 +7,24 @@
 </ion-header>
 
 <ion-content>
-  <ion-item>
-    <ion-label type="text" position="Enter Your Nickname">Nickname:</ion-label>
-    <ion-input [(ngModel)]="username"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>Show Notications:</ion-label>
-    <ion-toggle [(ngModel)]="notications" [checked]="toggleStatus"></ion-toggle>
-  </ion-item>
-  <ion-item>
-    <ion-label>Date:</ion-label>
-    <ion-datetime [(ngModel)]="dateTime" display-format="MM/YYYY" picker-format="MMMM YYYY"></ion-datetime>
-  </ion-item>
-  <ion-button (click)="save()">Save</ion-button>
-  <ion-button routerLink="/contact">Contact Us</ion-button>
+  <ion-list>
+    <ion-item>
+      <ion-label type="text" position="Enter Your Nickname">Nickname:</ion-label>
+      <ion-input [(ngModel)]="username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Location date:</ion-label>
+      <ion-datetime [(ngModel)]="dateTime" display-format="MM/YYYY" picker-format="MMMM YYYY"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Push notifications:</ion-label>
+      <ion-checkbox slot="end" [(ngModel)]="notifications" [checked]="pushStatus"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Automatic update:</ion-label>
+      <ion-toggle [(ngModel)]="update"></ion-toggle>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="block" fill="outline" (click)="save()">Save</ion-button>
+  <ion-button expand="block" fill="outline" routerLink="/contact">Contact Us</ion-button>
 </ion-content>
