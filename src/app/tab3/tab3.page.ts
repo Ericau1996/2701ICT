@@ -16,7 +16,7 @@ export class Tab3Page {
   constructor(private router: Router, private storage: Storage){
     this.storage.get("username").then(val => {
       if (val == null){
-        this.username = "Eric";
+        this.username = "Dinner";
       } else{
         this.username = val;
       }
