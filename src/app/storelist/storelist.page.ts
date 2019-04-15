@@ -8,6 +8,7 @@ import { STORES } from '../mock-stores';
   styleUrls: ['./storelist.page.scss'],
 })
 export class StorelistPage implements OnInit {
+  //Get data from store.ts and show to the list
   stores = STORES;
   selectedStore: Store;
   constructor() { }

@@ -8,6 +8,7 @@ import { Storage } from '@ionic/storage';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
+  //defined type of value
   username="";
   update:any;
   notifications:any;
@@ -30,6 +31,7 @@ export class Tab3Page {
       this.dateTime = valTime;
     });
   }
+  //save change of setting local
   save(){
     console.log('save working');
     this.storage.set("username", this.username);

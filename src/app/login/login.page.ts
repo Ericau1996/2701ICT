@@ -8,6 +8,7 @@ import { AccountPage } from '../account/account.page';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage{
+  //denfined type of value
   firstname="";
   lastname="";
   email="";
@@ -16,7 +17,7 @@ export class LoginPage{
 
   ngOnInit() {
   }
-
+  //passing value to account
   async login(){
     const account = await this.accountController.create({
       component: AccountPage,

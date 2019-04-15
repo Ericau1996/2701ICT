@@ -9,6 +9,7 @@ import { RECIPES } from '../mock-recipes';
   styleUrls: ['./recipelist.page.scss'],
 })
 export class RecipelistPage implements OnInit {
+  //Get data from recip.ts and show to the list
   recipes = RECIPES;
   selectedRecipe: Recipe;
   constructor() { }

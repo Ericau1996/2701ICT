@@ -12,6 +12,7 @@ export class AccountPage implements OnInit {
     { val: 'Sausage', isChecked: false },
     { val: 'Mushroom', isChecked: false }
   ];
+  //getting each data from login page and put them to account page
   firstname=null;
   lastname=null;
   email=null;
