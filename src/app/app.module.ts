@@ -10,11 +10,12 @@ import { AppComponent } from './app.component';
 import { Component } from '@angular/core';
 import { IonicStorageModule } from '@ionic/storage';
 import { AccountPageModule } from './account/account.module';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, AccountPageModule, IonicStorageModule.forRoot()],
+  imports: [BrowserModule, ChartsModule, IonicModule.forRoot(), AppRoutingModule, AccountPageModule, IonicStorageModule.forRoot()],
   providers: [
     StatusBar,
     SplashScreen,
