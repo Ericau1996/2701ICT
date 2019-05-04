@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+      </ion-buttons>
+    <ion-title>Recipe adding</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div>
+        <label>Recipe name:
+          <input #recipeName />
+        </label>
+        <!-- (click) passes input value to add() and then clears the input -->
+        <button (click)="add(recipeName.value); recipeName.value=''">
+          add
+        </button>
+      </div>
+</ion-content>

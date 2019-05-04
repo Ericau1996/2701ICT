@@ -8,7 +8,9 @@ const routes: Routes = [
   { path: 'account', loadChildren: './account/account.module#AccountPageModule' },
   { path: 'recipe', loadChildren: './recipe/recipe.module#RecipePageModule' },
   { path: 'store', loadChildren: './store/store.module#StorePageModule' },  { path: 'recipelist', loadChildren: './recipelist/recipelist.module#RecipelistPageModule' },
-  { path: 'storelist', loadChildren: './storelist/storelist.module#StorelistPageModule' }
+  { path: 'storelist', loadChildren: './storelist/storelist.module#StorelistPageModule' },
+  { path: 'recipeadd', loadChildren: './recipeadd/recipeadd.module#RecipeaddPageModule' },
+  { path: 'map', loadChildren: './map/map.module#MapPageModule' }
 
 ];
 @NgModule({

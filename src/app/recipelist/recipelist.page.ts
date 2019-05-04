@@ -17,4 +17,8 @@ export class RecipelistPage implements OnInit {
   ngOnInit() {
   }
 
+  add(name: string): void {
+    name = name.trim();
+  }
+
 }
