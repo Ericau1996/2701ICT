@@ -18,5 +18,13 @@
           <p>Located in: Sunny Park Shopping Centre</p>
           <p>Phone: (07) 3344 2682</p>
         </ion-card-content>
+        <h2>{{store.name}} Details</h2>
       </ion-card>
+          <h2>{{store.name | uppercase}} Details</h2>
+          <div><span>id: </span>{{store.id}}</div>
+          <div>
+            <label>name:
+              <input [(ngModel)]="store.name" placeholder="name"/>
+            </label>
+          </div>
 </ion-content>
