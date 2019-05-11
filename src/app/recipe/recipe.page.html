@@ -9,6 +9,15 @@
 
 <ion-content>
     <ion-card>
+        <h2>{{recipe.name | uppercase}} Details</h2>
+        <div>
+          <label>name:
+            <input [(ngModel)]="recipe.name" placeholder="name"/>
+          </label>
+        </div>
+      </ion-card>
+
+    <ion-card>
       <ion-card-header>
         <ion-card-title>INGREDIENTS (6 piece)</ion-card-title>
       </ion-card-header>
@@ -22,8 +31,8 @@
         <p>1/8tsp Salt</p>
       </ion-card-content>
     </ion-card>
+
     <ion-card>
-        <ion-img src="/assets/bar.png"></ion-img>
         <canvas #barCanvas></canvas>
     </ion-card>
     <ion-button (click)="additem()">Add item to chart</ion-button>

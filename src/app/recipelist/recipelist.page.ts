@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Recipe } from '../recipe';
 import { RECIPES } from '../mock-recipes';
-
+import { RecipeService } from '../Recipe.service';
 
 @Component({
   selector: 'app-recipelist',
@@ -9,16 +9,16 @@ import { RECIPES } from '../mock-recipes';
   styleUrls: ['./recipelist.page.scss'],
 })
 export class RecipelistPage implements OnInit {
-  //Get data from recip.ts and show to the list
-  recipes = RECIPES;
+  recipes : Recipe[];
   selectedRecipe: Recipe;
-  constructor() { }
+  constructor(private recipeService: RecipeService) { }
 
   ngOnInit() {
+    this.getRecipes();
   }
 
-  add(name: string): void {
-    name = name.trim();
+  getRecipes(): void {
+    this.recipeService.getRecipes()
+        .subscribe(recipes => this.recipes = recipes);
   }
-
 }

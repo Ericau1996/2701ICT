@@ -1,6 +1,9 @@
 import { Component, OnInit, ViewChild  } from '@angular/core';
 import { Chart } from 'chart.js';
-
+import { Recipe }         from '../recipe';
+import { RecipeService }  from '../recipe.service';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-recipe',
   templateUrl: './recipe.page.html',
@@ -9,11 +12,26 @@ import { Chart } from 'chart.js';
 export class RecipePage implements OnInit {
   @ViewChild('barCanvas') barCanvas;
   barChart:any;
+  recipe:Recipe;
 
-  constructor() {}
+  constructor(
+    private route: ActivatedRoute,
+    private recipeService: RecipeService,
+    private location: Location
+  ) { }
+
   ngOnInit() {
     this.createChart();
+    this.getRecipe();
   }
+
+  getRecipe(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.recipeService.getRecipe(id)
+    .subscribe(recipe => this.recipe = recipe);
+  }
+
+
   createChart(){
     this.barChart=new Chart(this.barCanvas.nativeElement, this.Chartconfig);
   }

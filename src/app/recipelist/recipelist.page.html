@@ -4,26 +4,16 @@
       <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-title>Recipe List</ion-title>
-    <ion-buttons slot="end">
-        <ion-button routerLink="/recipeadd">+</ion-button>
-    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let recipe of recipes" routerLink="/recipe">
-      <ion-label>{{recipe.id}}: {{recipe.name}}</ion-label>
-      <ion-icon name="alert" routerLink="/recipeadd" item-right></ion-icon>
+    <ion-item *ngFor="let recipe of recipes">
+      <a routerLink="/recipe/{{recipe.id}}">
+        <span class="badge">{{recipe.id}}</span> {{recipe.name}}
+      </a>
     </ion-item>
   </ion-list>
-  <div>
-      <label>Recipe name:
-        <input #recipeName />
-      </label>
-      <!-- (click) passes input value to add() and then clears the input -->
-      <button (click)="add(recipeName.value); recipeName.value=''">
-        add
-      </button>
-    </div>
 </ion-content>
+
