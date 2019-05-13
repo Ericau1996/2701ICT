@@ -12,14 +12,7 @@
         <ion-card-header>
           <ion-card-title>Location</ion-card-title>
         </ion-card-header>
-      
-        <ion-card-content>  
-          <p>Address: 31 Mains Rd, Sunnybank QLD 4109</p>
-          <p>Located in: Sunny Park Shopping Centre</p>
-          <p>Phone: (07) 3344 2682</p>
-        </ion-card-content>
-        <h2>{{store.name}} Details</h2>
-      </ion-card>
+        <ion-card-header>
           <h2>{{store.name | uppercase}} Details</h2>
           <div><span>id: </span>{{store.id}}</div>
           <div>
@@ -27,4 +20,17 @@
               <input [(ngModel)]="store.name" placeholder="name"/>
             </label>
           </div>
+        </ion-card-header>
+        <ion-card-content>  
+          <p>Address: 31 Mains Rd, Sunnybank QLD 4109</p>
+          <p>Located in: Sunny Park Shopping Centre</p>
+          <p>Phone: (07) 3344 2682</p>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <h2>Upload store image</h2>
+        <input #fileInput type="file" accept="image/*" (change)="imageSelected(fileInput.files)" multiple>
+        <img src={{imageFile}}>
+      </ion-card>
+
 </ion-content>
